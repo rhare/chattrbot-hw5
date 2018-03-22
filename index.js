@@ -1,14 +1,13 @@
 var http = require('http');
 var fs = require('fs');
 var extract = require('./extract');
-var wss = require('./websockets-server');
 var mime = require('mime');
 
 var handleError = function (err, res) {
-  var errorFile = 'app/error.html'
+  var errorFile = 'app/error.html';
   res.writeHead(404);
   fs.readFile(errorFile, function(err, data) {
-      res.end(data);
+    res.end(data);
   });
 };
 
